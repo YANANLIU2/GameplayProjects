@@ -1,4 +1,4 @@
-I made the project in Fall 2017 and documented everything recently. It uses some basic components including gameobject inheritance, state machine, a input system, a tiled map, bitmaps for animations, and AABB collision system. 
+I made the project in Fall 2017 and documented everything recently. It uses some basic components including gameobject inheritance, state machine, a input system, a tiled map, bitmaps for animations, frame timers, and AABB collision system. 
 
 Mechanics:
 Press WASD to move.
