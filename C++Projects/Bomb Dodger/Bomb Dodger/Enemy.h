@@ -6,7 +6,7 @@ class Player;
 class Enemy :
 	public Actor
 {
-	const float kMaxSpeedAccelerationOverTime = 1.0001;
+	const float kMaxSpeedAccelerationOverTime = 1.0001f;
 
 	// The player pointer. An enemy needs the player's position for moving towards the player
 	Player* player_;

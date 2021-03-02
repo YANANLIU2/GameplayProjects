@@ -1,10 +1,9 @@
 #include "stdafx.h"
 #include <time.h>
-#include "Bomb Dodger.h"
 #include "GameStateMachine.h"
 #include "FrameTimer.h"
 #include "GameSettings.h"
-
+#include "resource.h"
 #include "Input.h"
 
 #define MAX_LOADSTRING 100

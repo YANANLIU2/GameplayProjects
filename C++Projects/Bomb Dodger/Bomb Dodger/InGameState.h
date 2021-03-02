@@ -63,7 +63,7 @@ class InGameState : public GameState
 	void UpdatePlayerAttack();
 
 	// Generate a bomb
-	void FireABomb(int x, int y, EDirection dir);
+	void FireABomb(float x, float y, EDirection dir);
 
 	// Calculate collision
 	void Collision() override;

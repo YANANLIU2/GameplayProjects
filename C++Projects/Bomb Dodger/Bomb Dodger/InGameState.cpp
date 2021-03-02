@@ -139,7 +139,7 @@ void InGameState::Draw()
 		for (int x = 0; x < kTileColumns; ++x)
 		{
 			SelectObject(TileDc, A_TILE->GethBmp());
-			StretchBlt(hdcMemory, (int)A_TILE->get_x(), (int)A_TILE->get_y(), A_TILE->get_x_size(), A_TILE->get_y_size(),
+			StretchBlt(hdcMemory, (int)A_TILE->get_x(), (int)A_TILE->get_y(), (int)A_TILE->get_x_size(), (int)A_TILE->get_y_size(),
 				TileDc, 0, 0, A_TILE->GetBitmap().bmWidth, A_TILE->GetBitmap().bmHeight, SRCCOPY);
 		}
 	}
@@ -262,8 +262,8 @@ void InGameState::UpdatePlayerAttack()
 		return;
 	}
 
-	int x = player_->get_x() + player_->get_x_size() * 0.5;
-	int y = player_->get_y() + player_->get_y_size() * 0.5;
+	float x = player_->get_x() + player_->get_x_size() * 0.5f;
+	float y = player_->get_y() + player_->get_y_size() * 0.5f;
 
 	if (input_->IsValueKeyPressed(Input::EInputValue::kAttackDown))
 	{
@@ -283,7 +283,7 @@ void InGameState::UpdatePlayerAttack()
 	}
 }
 
-void InGameState::FireABomb(int x, int y, EDirection dir)
+void InGameState::FireABomb(float x, float y, EDirection dir)
 {
 	bomb_timer_.RestartTimer();
 	bomb_vec_.push_back(new Bomb(x, y, dir));
