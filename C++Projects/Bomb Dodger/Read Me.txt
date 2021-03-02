@@ -1,0 +1,18 @@
+I made the project in Fall 2017 and documented everything recently. It uses some basic components including gameobject inheritance, state machine, a input system, a tiled map, bitmaps for animations, and AABB collision system. 
+
+Mechanics:
+Press WASD to move.
+Press Arrow keys to fire.
+Kill All enemies to win. 
+Both killing enemies and collect coins will add score.
+Enemies will gradually increase their speed.
+
+Art Resources:
+1.Player: https://www.gameart2d.com/cute-girl-free-sprites.html
+2.Enemy: https://www.gameart2d.com/jack-o-lantern-free-sprites.html
+3.Coin: https://laredgames.itch.io/gems-coins-free?download
+4.Bomb: https://www.nicepng.com/ourpic/u2q8y3r5r5q8e6e6_explosion-file-sprite-sheet-explosion-sprite-sheet-png/
+5. Tile: https://opengameart.org/content/grass-tileset-16x16
+
+Game Programmer: Yanan Liu yanan.liu0325@gmail.com 415-660-6926
+Game Designer: Taichi Yamaguchi bokusushio@gmail.com 628-999-5652
