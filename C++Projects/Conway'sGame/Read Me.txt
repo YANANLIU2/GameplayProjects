@@ -1,0 +1,9 @@
+I made the project in Fall 2017 and documented everything recently. It uses windows input and drawing, a tiled map, my own input and log system to make a conway's game.
+
+Instructions:
+Click or drag to make one or multiple cells alive or dead.
+Press S to forward one simulation.
+Press Space to simulate continuously or pause the simulation.
+Press P to hide/show grids.
+Press A/D to accelerate/decelerate the simulation.
+Press Esc to reset the simulation.
