@@ -5,7 +5,6 @@ using std::vector;
 using std::pair;
 
 //  The class is for recording player input and providing the values to other objects
-class Command;
 class Input
 {
 public:
