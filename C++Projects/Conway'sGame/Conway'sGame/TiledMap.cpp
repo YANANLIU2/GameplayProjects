@@ -40,8 +40,8 @@ TiledMap::~TiledMap()
 
 int TiledMap::get_index_from_pixel_pos(float x, float y)
 {
-	int height = y / kTileHeight;
-	int width = x / kTileWidth;
+	int height = (int)y / kTileHeight;
+	int width = (int)x / kTileWidth;
 	return height * kMapWidth + width;
 }
 

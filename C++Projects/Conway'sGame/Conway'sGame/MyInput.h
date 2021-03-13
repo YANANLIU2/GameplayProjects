@@ -1,5 +1,6 @@
 #pragma once
-#include "MyVector2.h";
+
+#include "MyVector2.h"
 
 //  The class is for recording player input and providing the values to other objects
 class MyInput

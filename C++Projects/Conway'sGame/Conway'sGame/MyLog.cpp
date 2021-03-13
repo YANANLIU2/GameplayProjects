@@ -23,5 +23,5 @@ void MyLog::LogToConsole(const char* string)
 	swprintf_s(output, L"%hs\n", string);
 
 	// Draw one extra character for inserted newline!
-	BOOL result = WriteConsole(h_console_, output, strlen(string) + 1, &writtenCount, nullptr);
+	BOOL result = WriteConsole(h_console_, output, (DWORD)(strlen(string) + 1), &writtenCount, nullptr);
 }
