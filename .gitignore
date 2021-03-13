@@ -2,3 +2,17 @@
 *.ipch
 *.db
 C++Projects/Bomb Dodger/.vs/Bomb Dodger/v16/.suo
+*.obj
+*.log
+*.recipe
+*.pch
+*.lastbuildstate
+*.tlog
+*.res
+*.txt
+*.idb
+*.pdb
+*.exe
+*.exe
+*.ilk
+*.pdb

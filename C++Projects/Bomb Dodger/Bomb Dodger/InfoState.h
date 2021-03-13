@@ -14,7 +14,7 @@ class InfoState :
 	size_t txt_size_;
 
 	// The buffer size: if the length of the txt exceeds the buffer size => error
-	static constexpr const int kTxtBufferSize = 120;
+	static constexpr const size_t kTxtBufferSize = 120;
 
 public:
 	// Constructor 

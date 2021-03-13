@@ -10,7 +10,7 @@ InfoState::InfoState(HWND hWindow, Input* input, EStateType type, wchar_t* txt, 
 	, txt_rect_(textRect)
 	, txt_size_(txtSize) 
 {
-	assert(txt_size_ <= kTxtBufferSize, "The length of the txt is larger than the buffer size");
+	assert(txt_size_ <= kTxtBufferSize);
 }
 
 bool InfoState::Update()
@@ -42,8 +42,8 @@ void InfoState::Draw()
 	//Introduction
 	WCHAR Text[kTxtBufferSize];
 	wsprintf(Text, txt_);
-	RECT win_Rectangle{ txt_rect_.left, txt_rect_.top, txt_rect_.right, txt_rect_.bottom };
-	DrawText(hdcMemory, Text, txt_size_, &win_Rectangle, DT_BOTTOM);
+	RECT win_Rectangle{ (LONG)txt_rect_.left, (LONG)txt_rect_.top, (LONG)txt_rect_.right, (LONG)txt_rect_.bottom };
+	DrawText(hdcMemory, Text, (int)txt_size_, &win_Rectangle, DT_BOTTOM);
 
 	// Present the Memory to the Screen
 	BitBlt(hdcScreen, 0, 0, GAME_WIDTH, GAME_HEIGHT, hdcMemory, 0, 0, SRCCOPY);

@@ -8,7 +8,7 @@ void ObjBase::DrawTransparent(HDC & hdcScreen, HDC & hdcMemory, int transparent)
 
  	SelectObject(theDc, this->GethBmp());
 
-	TransparentBlt(hdcMemory, (int)x_, (int)y_, x_size_, y_size_, theDc, 0, 0, GetBitmap().bmWidth, GetBitmap().bmHeight, transparent);
+	TransparentBlt(hdcMemory, (int)x_, (int)y_, (int)x_size_, (int)y_size_, theDc, 0, 0, GetBitmap().bmWidth, GetBitmap().bmHeight, transparent);
 
 	DeleteDC(theDc);
 }
@@ -19,7 +19,7 @@ void ObjBase::DrawAll(HDC & hdcScreen, HDC & hdcMemory)
 
 	SelectObject(theDc, this->GethBmp());
 
-	StretchBlt(hdcMemory, (int)x_, (int)y_, x_size_, y_size_, theDc, 0, 0, GetBitmap().bmWidth, GetBitmap().bmHeight, SRCCOPY);
+	StretchBlt(hdcMemory, (int)x_, (int)y_, (int)x_size_, (int)y_size_, theDc, 0, 0, GetBitmap().bmWidth, GetBitmap().bmHeight, SRCCOPY);
 
 	DeleteDC(theDc);
 }
