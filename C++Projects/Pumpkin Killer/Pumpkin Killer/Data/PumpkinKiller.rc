@@ -1,0 +1,217 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_BOMBDODGER          ICON                    "Data\\icon.ico"
+
+IDI_SMALL               ICON                    "Data\\icon2.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_BOMBDODGER MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_BOMBDODGER ACCELERATORS
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Pumpkin Killer"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "Pumpkin Killer, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2017",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+// Player
+IDB_BITMAP25             BITMAP                  "Data\\Player\\Walk (1).bmp"
+IDB_BITMAP26             BITMAP                  "Data\\Player\\Walk (2).bmp"
+IDB_BITMAP27             BITMAP                  "Data\\Player\\Walk (3).bmp"
+IDB_BITMAP28             BITMAP                  "Data\\Player\\Walk (4).bmp"
+IDB_BITMAP29             BITMAP                  "Data\\Player\\Walk (5).bmp"
+IDB_BITMAP30             BITMAP                  "Data\\Player\\Walk (6).bmp"
+IDB_BITMAP31             BITMAP                  "Data\\Player\\Walk (7).bmp"
+IDB_BITMAP32             BITMAP                  "Data\\Player\\Walk (8).bmp"
+IDB_BITMAP33             BITMAP                  "Data\\Player\\Walk (9).bmp"
+IDB_BITMAP34             BITMAP                  "Data\\Player\\Walk (10).bmp"
+IDB_BITMAP35             BITMAP                  "Data\\Player\\Walk (11).bmp"
+IDB_BITMAP36             BITMAP                  "Data\\Player\\Walk (12).bmp"
+IDB_BITMAP37             BITMAP                  "Data\\Player\\Walk (13).bmp"
+IDB_BITMAP38             BITMAP                  "Data\\Player\\Walk (14).bmp"
+IDB_BITMAP39             BITMAP                  "Data\\Player\\Walk (15).bmp"
+IDB_BITMAP40             BITMAP                  "Data\\Player\\Walk (16).bmp"
+IDB_BITMAP41             BITMAP                  "Data\\Player\\Walk (17).bmp"
+IDB_BITMAP42             BITMAP                  "Data\\Player\\Walk (18).bmp"
+IDB_BITMAP43             BITMAP                  "Data\\Player\\Walk (19).bmp"
+IDB_BITMAP44             BITMAP                  "Data\\Player\\Walk (20).bmp"
+
+// Bombd
+IDB_BITMAP8             BITMAP                  "Data\\Bomb\\Bomb (1).bmp"
+IDB_BITMAP9             BITMAP                  "Data\\Bomb\\Bomb (2).bmp"
+IDB_BITMAP10            BITMAP                  "Data\\Bomb\\Bomb (3).bmp"
+IDB_BITMAP11            BITMAP                  "Data\\Bomb\\Bomb (4).bmp"
+IDB_BITMAP12            BITMAP                  "Data\\Bomb\\Bomb (5).bmp"
+IDB_BITMAP13            BITMAP                  "Data\\Bomb\\Bomb (6).bmp"
+
+// Tile
+IDB_BITMAP14            BITMAP                  "Data\\Tile\\Tile (1).bmp"
+
+// Enmey
+IDB_BITMAP15            BITMAP                  "Data\\Enemy\\Walk (1).bmp"
+IDB_BITMAP16            BITMAP                  "Data\\Enemy\\Walk (2).bmp"
+IDB_BITMAP17            BITMAP                  "Data\\Enemy\\Walk (3).bmp"
+IDB_BITMAP18            BITMAP                  "Data\\Enemy\\Walk (4).bmp"
+IDB_BITMAP19            BITMAP                  "Data\\Enemy\\Walk (5).bmp"
+IDB_BITMAP20            BITMAP                  "Data\\Enemy\\Walk (6).bmp"
+IDB_BITMAP21            BITMAP                  "Data\\Enemy\\Walk (7).bmp"
+IDB_BITMAP22            BITMAP                  "Data\\Enemy\\Walk (8).bmp"
+IDB_BITMAP23            BITMAP                  "Data\\Enemy\\Walk (9).bmp"
+IDB_BITMAP24            BITMAP                  "Data\\Enemy\\Walk (10).bmp"
+
+// Coin
+IDB_BITMAP45            BITMAP                  "Data\\Coin\\Coin (1).bmp"
+IDB_BITMAP46            BITMAP                  "Data\\Coin\\Coin (2).bmp"
+IDB_BITMAP47            BITMAP                  "Data\\Coin\\Coin (3).bmp"
+IDB_BITMAP48            BITMAP                  "Data\\Coin\\Coin (4).bmp"
+IDB_BITMAP49            BITMAP                  "Data\\Coin\\Coin (5).bmp"
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE           "Pumpkin Killer"
+    IDC_BOMBDODGER          "PUMPKINKILLER"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
