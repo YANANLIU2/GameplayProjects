@@ -1,4 +1,4 @@
-I made the project in Fall 2017 and documented everything recently. It uses windows input and drawing, a tiled map, my own input and log system to make a conway's game.
+This personal project is made in Fall 2017, using windows input and drawing, a tiled map, my own input and log system to demo a conway's game.
 
 Instructions:
 Click or drag to make one or multiple cells alive or dead.
