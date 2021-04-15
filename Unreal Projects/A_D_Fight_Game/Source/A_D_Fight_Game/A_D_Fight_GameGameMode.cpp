@@ -6,6 +6,7 @@
 #include "Net/OnlineEngineInterface.h"
 #include "A_D_Fight_GameSession.h"
 #include "Utilities/LogWritter.h"
+#include "GamePlay/Events/PowerUpBroadcaster.h"
 
 AA_D_Fight_GameGameMode::AA_D_Fight_GameGameMode()
 {
@@ -17,9 +18,6 @@ AA_D_Fight_GameGameMode::AA_D_Fight_GameGameMode()
 	}
 
 	GameSessionClass = A_D_Fight_GameSession::StaticClass();
-
-	// Binding the log writter
-	LogWritter_OnLogging.BindRaw(&LogWritter::get_instance(), &LogWritter::LogOnConsole);
 }
 
 void AA_D_Fight_GameGameMode::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
@@ -46,6 +44,12 @@ void AA_D_Fight_GameGameMode::InitGame(const FString& MapName, const FString& Op
 			GameSession->RegisterServer();
 		}
 	}
+
+	// Binding the log writter
+	LogWritter_OnLogging.BindRaw(&LogWritter::get_instance(), &LogWritter::LogOnConsole);
+
+	// Binding the power up broadcaster
+	PowerUpBroadcaster::GetInstance().OnPowerUpActivated().AddUObject(this, &AA_D_Fight_GameGameMode::PowerUpActivatedLogging);
 }
 
 void AA_D_Fight_GameGameMode::BeginPlay()
@@ -62,4 +66,9 @@ TSubclassOf<AGameSession> AA_D_Fight_GameGameMode::GetGameSessionClass() const
 	}
 
 	return A_D_Fight_GameSession::StaticClass();
+}
+
+void AA_D_Fight_GameGameMode::PowerUpActivatedLogging()
+{
+	LogWritter_OnLogging.Execute(FString("Power up is refreshed"));
 }

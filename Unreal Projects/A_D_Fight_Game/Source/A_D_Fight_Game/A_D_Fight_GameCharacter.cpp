@@ -8,6 +8,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Utilities/LogWritter.h"
 
 //////////////////////////////////////////////////////////////////////////
 // AA_D_Fight_GameCharacter
@@ -45,6 +46,13 @@ AA_D_Fight_GameCharacter::AA_D_Fight_GameCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+
+	// Binding the log writter
+	LogWritter_OnLogging.BindRaw(&LogWritter::get_instance(), &LogWritter::LogOnConsole);
+
+	// Test speed
+	RunMaxSpeed = 1200;
+	WalkMaxSpeed = 600;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -74,8 +82,20 @@ void AA_D_Fight_GameCharacter::SetupPlayerInputComponent(class UInputComponent* 
 
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AA_D_Fight_GameCharacter::OnResetVR);
-}
 
+	// Custom actions 
+	PlayerInputComponent->BindAction("Run", IE_Pressed, this, &AA_D_Fight_GameCharacter::RunStarted);
+	PlayerInputComponent->BindAction("Run", IE_Released, this, &AA_D_Fight_GameCharacter::RunEnded);
+
+	PlayerInputComponent->BindAction("Fly", IE_Pressed, this, &AA_D_Fight_GameCharacter::FlyStarted);
+	PlayerInputComponent->BindAction("Fly", IE_Released, this, &AA_D_Fight_GameCharacter::FlyEnded);
+
+	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &AA_D_Fight_GameCharacter::Attack);
+	PlayerInputComponent->BindAction("Defend", IE_Pressed, this, &AA_D_Fight_GameCharacter::Defend);
+	PlayerInputComponent->BindAction("Counter", IE_Pressed, this, &AA_D_Fight_GameCharacter::Counter);
+	PlayerInputComponent->BindAction("Block", IE_Pressed, this, &AA_D_Fight_GameCharacter::Block);
+	PlayerInputComponent->BindAction("Evade", IE_Pressed, this, &AA_D_Fight_GameCharacter::Evade);
+}
 
 void AA_D_Fight_GameCharacter::OnResetVR()
 {
@@ -138,3 +158,52 @@ void AA_D_Fight_GameCharacter::MoveRight(float Value)
 		AddMovementInput(Direction, Value);
 	}
 }
+
+void AA_D_Fight_GameCharacter::Attack()
+{
+	LogWritter_OnLogging.Execute(FString("GameCharacter: Attack"));
+}
+
+void AA_D_Fight_GameCharacter::Defend()
+{
+	LogWritter_OnLogging.Execute(FString("GameCharacter: Defend"));
+}
+
+void AA_D_Fight_GameCharacter::Counter()
+{
+	LogWritter_OnLogging.Execute(FString("GameCharacter: Counter"));
+}
+
+void AA_D_Fight_GameCharacter::Block()
+{
+	LogWritter_OnLogging.Execute(FString("GameCharacter: Block"));
+}
+
+void AA_D_Fight_GameCharacter::Evade()
+{
+	LogWritter_OnLogging.Execute(FString("GameCharacter: Evade"));
+}
+
+void AA_D_Fight_GameCharacter::RunStarted()
+{
+	LogWritter_OnLogging.Execute(FString("GameCharacter: Run Started"));
+	GetCharacterMovement()->MaxWalkSpeed = RunMaxSpeed;
+}
+
+void AA_D_Fight_GameCharacter::RunEnded()
+{
+	LogWritter_OnLogging.Execute(FString("GameCharacter: Run Ended"));
+	GetCharacterMovement()->MaxWalkSpeed = WalkMaxSpeed;
+}
+
+void AA_D_Fight_GameCharacter::FlyStarted()
+{
+	LogWritter_OnLogging.Execute(FString("GameCharacter: Fly Started"));
+}
+
+void AA_D_Fight_GameCharacter::FlyEnded()
+{
+	LogWritter_OnLogging.Execute(FString("GameCharacter: Fly Ended"));
+}
+
+

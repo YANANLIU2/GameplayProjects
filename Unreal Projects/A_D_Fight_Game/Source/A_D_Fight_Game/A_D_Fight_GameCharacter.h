@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "A_D_Fight_GameCharacter.generated.h"
 
+DECLARE_DELEGATE_OneParam(FGameCharacterLoggerSignature, FString);
 UCLASS(config=Game)
 class AA_D_Fight_GameCharacter : public ACharacter
 {
@@ -29,6 +30,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	
 protected:
 
 	/** Resets HMD orientation in VR. */
@@ -68,5 +70,35 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	// Custom
+protected:
+	void Attack();
+
+	void Defend();
+
+	void Counter();
+
+	void Block();
+
+	void Evade();
+
+	void RunStarted();
+
+	void RunEnded();
+
+	void FlyStarted();
+
+	void FlyEnded();
+
+	FGameCharacterLoggerSignature LogWritter_OnLogging;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Customized Movement")
+	float RunMaxSpeed; // Editor Tunable max running speed
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Customized Movement")
+	float WalkMaxSpeed; // Editor Tunable max walking speed
+
+	bool IsRunning;
 };
 
