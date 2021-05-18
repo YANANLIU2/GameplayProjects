@@ -53,6 +53,9 @@ AA_D_Fight_GameCharacter::AA_D_Fight_GameCharacter()
 	// Test speed
 	RunMaxSpeed = 1200;
 	WalkMaxSpeed = 600;
+
+	// Set Boulder Spawn Offset to spawn projectiles slightly in front of the player.
+	BoulderSpawnOffset.Set(100.0f, 0.0f, 0.0f);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -156,6 +159,33 @@ void AA_D_Fight_GameCharacter::MoveRight(float Value)
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
+	}
+}
+
+void AA_D_Fight_GameCharacter::FireABoulder()
+{
+	// Transform BoulderSpawnOffset from relative to the boss space to world space.
+	FVector BoudlerLocation = this->GetActorLocation() + FTransform(this->GetActorRotation()).TransformVector(BoulderSpawnOffset);
+
+	// Skew the aim to be slightly upwards.
+	FRotator BoudlerRotation = this->GetActorRotation();
+	BoudlerRotation.Pitch += 10.0f;
+
+	UWorld* World = GetWorld();
+	if (World)
+	{
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.Owner = this;
+		SpawnParams.Instigator = GetInstigator();
+
+		// Spawn the projectile at the muzzle.
+		ABoudler* Boudler = World->SpawnActor<ABoudler>(BoulderProjectileClass, BoudlerLocation, BoudlerRotation, SpawnParams);
+		if (Boudler)
+		{
+			// Set the projectile's initial trajectory.
+			FVector LaunchDirection = BoudlerRotation.Vector();
+			Boudler->FireInDirection(LaunchDirection);
+		}
 	}
 }
 

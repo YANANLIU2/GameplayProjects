@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "A_D_Fight_Game/GamePlay/Projectiles/Boudler.h"
 #include "A_D_Fight_GameCharacter.generated.h"
 
 DECLARE_DELEGATE_OneParam(FGameCharacterLoggerSignature, FString);
@@ -19,6 +20,7 @@ class AA_D_Fight_GameCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
+
 public:
 	AA_D_Fight_GameCharacter();
 
@@ -30,6 +32,13 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	// Boudler spawn offset from the boss location.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+		FVector BoulderSpawnOffset;
+
+	// Projectile class to spawn.
+	UPROPERTY(EditAnywhere, Category = Projectile)
+		TSubclassOf<class ABoudler> BoulderProjectileClass;
 	
 protected:
 
@@ -71,7 +80,9 @@ public:
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 
-	// Custom
+	// Fire
+	void FireABoulder();
+	
 protected:
 	void Attack();
 
