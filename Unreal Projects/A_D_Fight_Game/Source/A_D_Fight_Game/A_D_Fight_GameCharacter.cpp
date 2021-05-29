@@ -170,7 +170,6 @@ void AA_D_Fight_GameCharacter::FireABoulder()
 	// Skew the aim to be slightly upwards.
 	FRotator BoudlerRotation = this->GetActorRotation();
 	BoudlerRotation.Pitch += 10.0f;
-
 	UWorld* World = GetWorld();
 	if (World)
 	{

@@ -9,6 +9,7 @@
 #include "GamePlay/Events/PowerUpBroadcaster.h"
 
 AA_D_Fight_GameGameMode::AA_D_Fight_GameGameMode()
+	: m_gameplayLoop(EGameplayLoop::kPrimaryLoop)
 {
 	// set default pawn class to our Blueprinted character
 	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/ThirdPersonCPP/Blueprints/ThirdPersonCharacter"));

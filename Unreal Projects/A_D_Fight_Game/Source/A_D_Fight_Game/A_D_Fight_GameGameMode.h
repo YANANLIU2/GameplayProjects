@@ -12,6 +12,14 @@ class AA_D_Fight_GameGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
+private:
+	// Gameplay loops
+	enum class GameplayLoop
+	{
+		kPrimaryLoop, // Race to conquer as many arenas in a lap or 2.
+		kSecondaryLoop // Complete challenges to conquer the arena.
+	};
+
 public:
 	AA_D_Fight_GameGameMode();
 

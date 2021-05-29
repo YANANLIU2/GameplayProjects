@@ -18,7 +18,7 @@ class AA_D_Fight_GameCharacter : public ACharacter
 	class USpringArmComponent* CameraBoom;
 
 	/** Follow camera */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true")                                                                                                                                             )
 	class UCameraComponent* FollowCamera;
 
 public:
